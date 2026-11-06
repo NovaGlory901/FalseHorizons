@@ -1,0 +1,73 @@
+{
+ "fh-preset": 1,
+ "name": "Aurora Wire",
+ "author": "FalseHorizons",
+ "dialect": "fh",
+ "hear": 1,
+ "zoom": 1.003,
+ "rot": 0,
+ "cx": 0.5,
+ "cy": 0.5,
+ "dx": 0,
+ "dy": 0.002,
+ "sx": 1,
+ "sy": 1,
+ "warp": 0.5,
+ "decay": 0.98,
+ "wave": {
+  "mode": 0,
+  "r": 1,
+  "g": 1,
+  "b": 1,
+  "a": 0,
+  "scale": 1,
+  "x": 0.5,
+  "y": 0.5,
+  "additive": true,
+  "thick": 1
+ },
+ "color": {
+  "gamma": 1,
+  "hue": 0,
+  "bright": 1,
+  "solarize": 0,
+  "echoAlpha": 0,
+  "echoZoom": 1,
+  "echoOrient": 0,
+  "cover": 0
+ },
+ "init": "",
+ "frame": "wave_a = 0; dy = 0.002 + 0.004 * bass",
+ "pixel": "",
+ "waves": [
+  {
+   "samples": 128,
+   "r": 1,
+   "g": 1,
+   "b": 1,
+   "a": 0.8,
+   "additive": true,
+   "dots": false,
+   "thick": 2,
+   "spectrum": false,
+   "init": "",
+   "frame": "",
+   "point": "x = sample; y = 0.55 + 0.15 * sin(sample * 9 + time * 0.7) + value1 * 0.08; r = 0.2; g = 0.9; b = 0.7 + 0.3 * sin(sample * 5 + time)"
+  },
+  {
+   "samples": 128,
+   "r": 1,
+   "g": 1,
+   "b": 1,
+   "a": 0.6,
+   "additive": true,
+   "dots": false,
+   "thick": 2,
+   "spectrum": false,
+   "init": "",
+   "frame": "",
+   "point": "x = sample; y = 0.4 + 0.12 * sin(sample * 7 - time * 0.5) + value1 * 0.06; r = 0.7; g = 0.4; b = 1"
+  }
+ ],
+ "shapes": []
+}

@@ -1,0 +1,10 @@
+build/
+build-*/
+.cache/
+compile_commands.json
+# people's own pictures stay on their own machine; only the READMEs in these folders are part of the project
+/backgrounds/*
+!/backgrounds/README.txt
+/artifacts/*
+!/artifacts/README.txt
+/settings.json
