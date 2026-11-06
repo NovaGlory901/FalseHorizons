@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 if(POLICY CMP0207)
   cmake_policy(SET CMP0207 NEW)     # runtime-dependency paths are matched after normalising them (Windows)
 endif()
-project(FalseHorizon VERSION 0.1.0 DESCRIPTION "A MilkDrop-style music visualizer, C++ port" LANGUAGES CXX)
+project(FalseHorizons VERSION 0.1.0 DESCRIPTION "A MilkDrop-style music visualizer, C++ port" LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -31,12 +31,7 @@ endif()
 find_package(PkgConfig QUIET)
 
 # Code that DejaVuAmp also uses (the JSON reader, UTF-8 paths, the sound analysis, the random picker, folder watching, miniaudio, Dear ImGui) lives in shared/native/.
-# In the public copy of this program the shared code sits inside it (shared/native); in the full repository it is one folder up.
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/shared/native)
-  set(SHARED ${CMAKE_CURRENT_SOURCE_DIR}/shared/native)
-else()
-  set(SHARED ${CMAKE_CURRENT_SOURCE_DIR}/../shared/native)
-endif()
+set(SHARED ${CMAKE_CURRENT_SOURCE_DIR}/shared/native)
 
 # The equation language: formulas compiled to a small stack program. No dependencies, no platform code.
 add_library(fh_expr src/expr.cpp)
